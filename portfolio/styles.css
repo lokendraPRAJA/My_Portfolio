@@ -1,28 +1,28 @@
-/* Spiderman Theme - Classy & Glassy */
+/* Midnight Slate Theme - Professional & Clean */
 
 ::-webkit-scrollbar { width: 10px; }
-::-webkit-scrollbar-track { background: #0A0E17; }
-::-webkit-scrollbar-thumb { background: linear-gradient(to bottom, #ef4444, #3b82f6); border-radius: 5px; }
-::-webkit-scrollbar-thumb:hover { background: linear-gradient(to bottom, #dc2626, #2563eb); }
+::-webkit-scrollbar-track { background: #020617; }
+::-webkit-scrollbar-thumb { background: linear-gradient(to bottom, #38bdf8, #818cf8); border-radius: 5px; }
+::-webkit-scrollbar-thumb:hover { background: linear-gradient(to bottom, #0ea5e9, #6366f1); }
 
 .glass-card {
-    background: rgba(30, 41, 59, 0.4) !important;
+    background: rgba(15, 23, 42, 0.4) !important;
     backdrop-filter: blur(16px) !important;
-    border: 1px solid rgba(239, 68, 68, 0.15) !important;
+    border: 1px solid rgba(56, 189, 248, 0.15) !important;
     box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5) !important;
     transition: all 0.3s ease;
     position: relative;
     z-index: 1;
 }
 .glass-card:hover {
-    background: rgba(30, 41, 59, 0.6) !important;
-    border-color: rgba(59, 130, 246, 0.3) !important;
-    box-shadow: 0 15px 35px -10px rgba(239, 68, 68, 0.2) !important;
+    background: rgba(15, 23, 42, 0.6) !important;
+    border-color: rgba(129, 140, 248, 0.3) !important;
+    box-shadow: 0 15px 35px -10px rgba(56, 189, 248, 0.2) !important;
     transform: translateY(-2px);
 }
 
 .text-gradient {
-    background: linear-gradient(90deg, #ef4444, #3b82f6);
+    background: linear-gradient(90deg, #38bdf8, #818cf8);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -30,9 +30,9 @@
 .floating-badge {
     animation: float 6s ease-in-out infinite;
     background: rgba(255, 255, 255, 0.05) !important;
-    border: 1px solid rgba(59, 130, 246, 0.3) !important;
+    border: 1px solid rgba(129, 140, 248, 0.3) !important;
     backdrop-filter: blur(10px);
-    box-shadow: 0 0 20px rgba(59, 130, 246, 0.15) !important;
+    box-shadow: 0 0 20px rgba(129, 140, 248, 0.15) !important;
 }
 
 @keyframes float {
@@ -45,16 +45,16 @@
 .animation-delay-4000 { animation-delay: 4s; }
 
 header.scrolled {
-    background: rgba(10, 14, 23, 0.85) !important;
+    background: rgba(2, 6, 23, 0.85) !important;
     backdrop-filter: blur(16px) !important;
-    border-bottom: 1px solid rgba(239, 68, 68, 0.2) !important;
+    border-bottom: 1px solid rgba(56, 189, 248, 0.2) !important;
     box-shadow: 0 4px 30px rgba(0,0,0,0.5) !important;
 }
 
-.typed-cursor { color: #ef4444; }
+.typed-cursor { color: #38bdf8; }
 
-/* Theme Overrides for Spidey Mode */
-body { color: #f8fafc !important; background-color: #0A0E17 !important; }
+/* Theme Overrides for Midnight Mode */
+body { color: #f8fafc !important; background-color: #020617 !important; }
 .text-white { color: #ffffff !important; }
 .text-gray-200 { color: #f1f5f9 !important; }
 .text-gray-300 { color: #e2e8f0 !important; }
@@ -65,9 +65,9 @@ body { color: #f8fafc !important; background-color: #0A0E17 !important; }
     background: rgba(255, 255, 255, 0.03) !important; 
     border: 1px solid rgba(255,255,255,0.05) !important; 
 }
-.bg-white\/5 { background-color: rgba(239, 68, 68, 0.05) !important; }
-.border-white\/10 { border-color: rgba(59, 130, 246, 0.15) !important; }
-.border-white\/5 { border-color: rgba(239, 68, 68, 0.1) !important; }
+.bg-white\/5 { background-color: rgba(56, 189, 248, 0.05) !important; }
+.border-white\/10 { border-color: rgba(129, 140, 248, 0.15) !important; }
+.border-white\/5 { border-color: rgba(56, 189, 248, 0.1) !important; }
 .border-white\/20 { border-color: rgba(255,255,255,0.15) !important; }
 
 .mix-blend-screen { mix-blend-mode: screen !important; }
@@ -75,7 +75,7 @@ body { color: #f8fafc !important; background-color: #0A0E17 !important; }
 input, textarea { 
     color: #ffffff !important; 
     background-color: rgba(255,255,255,0.03) !important; 
-    border: 1px solid rgba(59, 130, 246, 0.2) !important; 
+    border: 1px solid rgba(129, 140, 248, 0.2) !important; 
 }
 input::placeholder, textarea::placeholder { color: #94a3b8 !important; }
-input:focus, textarea:focus { border-color: #ef4444 !important; outline: none; box-shadow: 0 0 10px rgba(239, 68, 68, 0.2); }
+input:focus, textarea:focus { border-color: #38bdf8 !important; outline: none; box-shadow: 0 0 10px rgba(56, 189, 248, 0.2); }
