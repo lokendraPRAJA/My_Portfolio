@@ -186,16 +186,33 @@
                 
                 <div class="grid md:grid-cols-2 gap-12 items-center">
                     <div class="gs_reveal gs_reveal_fromLeft">
-                        <div class="relative rounded-2xl overflow-hidden group">
-                            <div class="absolute inset-0 bg-gradient-to-t from-background to-transparent z-10 opacity-60"></div>
-                            <div class="w-full h-[400px] bg-white/5 border border-white/10 rounded-2xl flex items-center justify-center">
-                                <!-- Abstract design for About image -->
-                                <div class="relative w-full h-full p-8 flex flex-col justify-end">
-                                   <div class="w-full h-full bg-gradient-to-br from-primary/20 to-purple-600/20 rounded-xl border border-white/10 flex items-center justify-center backdrop-blur-sm relative overflow-hidden group-hover:scale-105 transition-transform duration-700">
-                                       <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-secondary to-transparent opacity-50"></div>
-                                       <i class="fas fa-laptop-code text-8xl text-white/20"></i>
-                                   </div>
+                        <div class="relative rounded-2xl overflow-hidden group h-[400px] border border-white/10 bg-[#0d1117] shadow-2xl flex flex-col">
+                            <!-- Mac Window Controls -->
+                            <div class="flex items-center px-4 py-3 bg-[#161b22] border-b border-white/5">
+                                <div class="flex space-x-2">
+                                    <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                                    <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                                    <div class="w-3 h-3 rounded-full bg-green-500"></div>
                                 </div>
+                                <div class="flex-1 text-center text-xs text-gray-500 font-mono pr-8">lokendra.js</div>
+                            </div>
+                            
+                            <!-- Code Content -->
+                            <div class="p-6 text-sm md:text-base font-mono overflow-hidden flex-1 bg-gradient-to-br from-[#0d1117] to-surface">
+                                <div class="text-gray-500 mb-3">// Defining the developer profile</div>
+                                <div class="flex mb-1"><span class="text-pink-500 mr-2">const</span> <span class="text-blue-400">developer</span> <span class="text-white mx-2">=</span> <span class="text-yellow-300">{</span></div>
+                                <div class="pl-6 flex mb-1"><span class="text-sky-300">name:</span> <span class="text-green-300 ml-2">'Lokendra Prajapati'</span><span class="text-white">,</span></div>
+                                <div class="pl-6 flex mb-1"><span class="text-sky-300">role:</span> <span class="text-green-300 ml-2">'Frontend Developer'</span><span class="text-white">,</span></div>
+                                <div class="pl-6 flex mb-1"><span class="text-sky-300">location:</span> <span class="text-green-300 ml-2">'India'</span><span class="text-white">,</span></div>
+                                <div class="pl-6 flex mb-1 whitespace-nowrap"><span class="text-sky-300">skills:</span> <span class="text-yellow-300 ml-2">[</span><span class="text-green-300">'HTML'</span><span class="text-white">,</span> <span class="text-green-300">'Tailwind'</span><span class="text-white">,</span> <span class="text-green-300">'JS'</span><span class="text-yellow-300">]</span><span class="text-white">,</span></div>
+                                <div class="pl-6 flex mb-1"><span class="text-sky-300">hardWorker:</span> <span class="text-orange-400 ml-2">true</span></div>
+                                <div class="flex mb-4"><span class="text-yellow-300">}</span><span class="text-white">;</span></div>
+                                
+                                <div class="text-gray-500 mb-2">// Execute constantly</div>
+                                <div class="flex"><span class="text-blue-400">developer</span><span class="text-white">.</span><span class="text-yellow-200">code</span><span class="text-pink-500">()</span><span class="text-white">;</span></div>
+                                
+                                <!-- Blinking Cursor -->
+                                <div class="mt-4 w-2 h-5 bg-primary animate-pulse"></div>
                             </div>
                         </div>
                     </div>
