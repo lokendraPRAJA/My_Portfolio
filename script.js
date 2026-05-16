@@ -1,9 +1,38 @@
-// Register GSAP ScrollTrigger
-gsap.registerPlugin(ScrollTrigger);
-
 document.addEventListener('DOMContentLoaded', () => {
-    
-    // 1. Mobile Menu Toggle
+    // 1. Custom Cursor Logic
+    const cursorFollower = document.createElement('div');
+    const cursorDot = document.createElement('div');
+    cursorFollower.className = 'cursor-follower';
+    cursorDot.className = 'cursor-dot';
+    document.body.appendChild(cursorFollower);
+    document.body.appendChild(cursorDot);
+
+    document.addEventListener('mousemove', (e) => {
+        gsap.to(cursorFollower, {
+            x: e.clientX,
+            y: e.clientY,
+            duration: 0.3,
+            ease: "power2.out"
+        });
+        gsap.to(cursorDot, {
+            x: e.clientX,
+            y: e.clientY,
+            duration: 0.1,
+            ease: "power2.out"
+        });
+    });
+
+    // Hide cursor when leaving window
+    document.addEventListener('mouseleave', () => {
+        cursorFollower.style.opacity = '0';
+        cursorDot.style.opacity = '0';
+    });
+    document.addEventListener('mouseenter', () => {
+        cursorFollower.style.opacity = '1';
+        cursorDot.style.opacity = '1';
+    });
+
+    // 2. Mobile Menu Toggle
     const mobileBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
     const mobileLinks = document.querySelectorAll('.mobile-nav-link');
@@ -128,52 +157,141 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 5. Particles.js Environment
-    if (typeof particlesJS !== 'undefined') {
-        particlesJS('particles-js', {
-          "particles": {
-            "number": {
-              "value": 120,
-              "density": { "enable": true, "value_area": 800 }
-            },
-            "color": { "value": "#ef4444" },
-            "shape": { "type": "circle" },
-            "opacity": { "value": 0.4, "random": true },
-            "size": { "value": 3, "random": true },
-            "line_linked": {
-              "enable": true,
-              "distance": 130,
-              "color": "#3b82f6",
-              "opacity": 0.2,
-              "width": 1
-            },
-            "move": {
-              "enable": true,
-              "speed": 2,
-              "direction": "none",
-              "random": true,
-              "straight": false,
-              "out_mode": "out",
-              "bounce": false,
+    // 5. Magnetic Button Effect
+    const magneticButtons = document.querySelectorAll('a.bg-gradient-to-r, button[type="submit"]');
+    
+    magneticButtons.forEach(btn => {
+        btn.addEventListener('mousemove', (e) => {
+            const rect = btn.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+            
+            gsap.to(btn, {
+                x: x * 0.3,
+                y: y * 0.3,
+                duration: 0.3,
+                ease: "power2.out"
+            });
+        });
+        
+        btn.addEventListener('mouseleave', () => {
+            gsap.to(btn, {
+                x: 0,
+                y: 0,
+                duration: 0.5,
+                ease: "elastic.out(1, 0.3)"
+            });
+        });
+    });
+
+    // 6. Rose Petal Animation
+    const petalContainer = document.createElement('div');
+    petalContainer.className = 'petal-container';
+    document.body.appendChild(petalContainer);
+
+    function createPetal() {
+        const petal = document.createElement('div');
+        petal.className = 'petal';
+        
+        // Random properties
+        const size = Math.random() * 20 + 15;
+        const startX = Math.random() * window.innerWidth;
+        const duration = Math.random() * 6 + 6;
+        const delay = Math.random() * 10;
+        
+        petal.style.width = `${size}px`;
+        petal.style.height = `${size}px`;
+        petal.style.left = `${startX}px`;
+        petal.style.top = `-40px`;
+        
+        petalContainer.appendChild(petal);
+        
+        // GSAP Animation for falling
+        gsap.to(petal, {
+            y: window.innerHeight + 100,
+            x: `+=${Math.random() * 300 - 150}`,
+            rotation: Math.random() * 1080,
+            rotationY: Math.random() * 720,
+            duration: duration,
+            delay: delay,
+            ease: "none",
+            onComplete: () => {
+                petal.remove();
+                createPetal();
             }
-          },
-          "interactivity": {
-            "detect_on": "window",
-            "events": {
-              "onhover": { "enable": true, "mode": "grab" },
-              "onclick": { "enable": true, "mode": "push" },
-              "resize": true
+        });
+        
+        // Subtle opacity fade in
+        gsap.fromTo(petal, { opacity: 0 }, { opacity: 0.8, duration: 1, delay: delay });
+    }
+
+    // Initial petals
+    for (let i = 0; i < 45; i++) {
+        setTimeout(createPetal, Math.random() * 8000);
+    }
+
+    // 7. Funny Sticker Animation Logic - Refined
+    const stickerOrbits = document.querySelectorAll('.sticker-orbit');
+    
+    const stickerSpeeds = [15, 25, 35, 50, 70, 95, 125]; 
+    
+    stickerOrbits.forEach((orbit, index) => {
+        const sticker = orbit.querySelector('.planet-sticker');
+        
+        // Rotate the entire orbit div
+        gsap.to(orbit, {
+            rotation: 360,
+            duration: stickerSpeeds[index],
+            repeat: -1,
+            ease: "none"
+        });
+        
+        // Counter-rotate the sticker to keep it upright
+        gsap.to(sticker, {
+            rotation: -360,
+            duration: stickerSpeeds[index],
+            repeat: -1,
+            ease: "none"
+        });
+
+        // Individual floating movement for each sticker
+        gsap.to(sticker, {
+            y: "random(-20, 20)",
+            x: "random(-10, 10)",
+            duration: "random(2, 4)",
+            repeat: -1,
+            yoyo: true,
+            ease: "sine.inOut"
+        });
+    });
+    // 9. Secret Draggable Planets (Making them "Toys")
+    if (window.Draggable) {
+        Draggable.create(".planet-sticker", {
+            bounds: ".solar-system-container",
+            inertia: true,
+            onDragStart: function() {
+                gsap.to(this.target, { scale: 1.2, zIndex: 1000 });
             },
-            "modes": {
-              "grab": {
-                "distance": 140,
-                "line_linked": { "opacity": 0.8 }
-              },
-              "push": { "particles_nb": 4 }
+            onDragEnd: function() {
+                gsap.to(this.target, { scale: 1 });
             }
-          },
-          "retina_detect": true
         });
     }
 
+    // 10. Terminal Shortcut (Press 'T' for Terminal)
+    window.addEventListener('keydown', (e) => {
+        if (e.key.toLowerCase() === 't') {
+            const cmd = prompt("CODX TERMINAL v1.0\nEnter Command: (theme-gold, theme-neon, reset)");
+            if (cmd === 'theme-gold') {
+                document.documentElement.style.setProperty('--primary', '#d4af37');
+                alert("Gold Mode Activated");
+            } else if (cmd === 'theme-neon') {
+                document.documentElement.style.setProperty('--primary', '#ff0055');
+                alert("Neon Mode Activated");
+            } else if (cmd === 'reset') {
+                location.reload();
+            }
+        }
+    });
 });
+
