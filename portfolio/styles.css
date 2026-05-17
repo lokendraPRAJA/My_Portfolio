@@ -1,60 +1,269 @@
-/* Midnight Slate Theme - Professional & Clean */
+/* Next Level Noise Texture */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://grainy-gradients.vercel.app/noise.svg');
+    opacity: 0.04;
+    pointer-events: none;
+    z-index: 9999;
+}
 
-::-webkit-scrollbar { width: 10px; }
-::-webkit-scrollbar-track { background: #020617; }
-::-webkit-scrollbar-thumb { background: linear-gradient(to bottom, #38bdf8, #818cf8); border-radius: 5px; }
-::-webkit-scrollbar-thumb:hover { background: linear-gradient(to bottom, #0ea5e9, #6366f1); }
+/* Selection Color */
+::selection {
+    background: #ff003c;
+    color: #fff;
+}
+
+/* Custom Luxury Scrollbar - Cyber Emerald */
+::-webkit-scrollbar {
+    width: 4px;
+}
+::-webkit-scrollbar-track {
+    background: #050505;
+}
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #ff003c, #8a0021);
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(to bottom, #ff3333, #ff003c);
+}
+
+/* Infinite Marquee */
+.marquee-container {
+    overflow: hidden;
+    white-space: nowrap;
+    background: rgba(255, 255, 255, 0.03);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 15px 0;
+    margin: 40px 0;
+}
+
+.marquee-content {
+    display: inline-block;
+    animation: marquee 30s linear infinite;
+}
+
+.marquee-item {
+    display: inline-block;
+    padding: 0 40px;
+    font-size: 14px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.marquee-item span {
+    color: #ff3333;
+    margin-right: 10px;
+}
+
+@keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.project-quick-action {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    gap: 10px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.4s ease;
+    z-index: 30;
+}
+
+.elite-project-card:hover .project-quick-action {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.quick-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: white;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.quick-btn:hover {
+    background: #ff003c;
+    color: white;
+    transform: scale(1.1);
+}
 
 .glass-card {
     background: rgba(15, 23, 42, 0.4) !important;
     backdrop-filter: blur(16px) !important;
-    border: 1px solid rgba(56, 189, 248, 0.15) !important;
+    border: 1px solid rgba(255, 0, 60, 0.15) !important;
     box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5) !important;
-    transition: all 0.3s ease;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     z-index: 1;
 }
 .glass-card:hover {
     background: rgba(15, 23, 42, 0.6) !important;
-    border-color: rgba(129, 140, 248, 0.3) !important;
-    box-shadow: 0 15px 35px -10px rgba(56, 189, 248, 0.2) !important;
-    transform: translateY(-2px);
+    border-color: rgba(255, 51, 51, 0.4) !important;
+    box-shadow: 0 20px 40px -10px rgba(255, 0, 60, 0.3) !important;
+    transform: translateY(-5px);
 }
 
 .text-gradient {
-    background: linear-gradient(90deg, #38bdf8, #818cf8);
+    background: linear-gradient(135deg, #ff003c, #8a0021, #ff3333, #cc0000, #ff0055);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    background-size: 300% 300%;
+    animation: gradient-shift 6s ease infinite;
 }
+
+/* Bento Card and Background Text */
+.bento-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 24px;
+    padding: 24px;
+    position: relative;
+    overflow: hidden;
+}
+
+.tagda-bg-text {
+    position: absolute;
+    font-size: 8rem;
+    font-weight: 900;
+    color: rgba(255, 255, 255, 0.02);
+    top: -20px;
+    right: 10px;
+    pointer-events: none;
+    user-select: none;
+}
+
+@keyframes gradient-shift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Petal Styles */
+.petal-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.petal {
+    position: absolute;
+    background-image: url('rose_petal_v2.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.9;
+    transform-origin: center;
+    mix-blend-mode: screen;
+    filter: drop-shadow(0 0 10px rgba(255, 0, 80, 0.4));
+}
+
+/* More Vibrant Blobs */
+.bg-vibrant-1 { background: radial-gradient(circle, rgba(255, 0, 60, 0.15) 0%, transparent 70%); }
+.bg-vibrant-2 { background: radial-gradient(circle, rgba(138, 0, 33, 0.15) 0%, transparent 70%); }
+.bg-vibrant-3 { background: radial-gradient(circle, rgba(255, 51, 51, 0.15) 0%, transparent 70%); }
 
 .floating-badge {
     animation: float 6s ease-in-out infinite;
     background: rgba(255, 255, 255, 0.05) !important;
-    border: 1px solid rgba(129, 140, 248, 0.3) !important;
+    border: 1px solid rgba(255, 51, 51, 0.3) !important;
     backdrop-filter: blur(10px);
-    box-shadow: 0 0 20px rgba(129, 140, 248, 0.15) !important;
+    box-shadow: 0 0 20px rgba(255, 51, 51, 0.15) !important;
 }
 
 @keyframes float {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
-    100% { transform: translateY(0px); }
+    0% { transform: translateY(0px) rotate(0deg); }
+    33% { transform: translateY(-15px) rotate(2deg); }
+    66% { transform: translateY(5px) rotate(-2deg); }
+    100% { transform: translateY(0px) rotate(0deg); }
 }
 
-.animation-delay-2000 { animation-delay: 2s; }
-.animation-delay-4000 { animation-delay: 4s; }
-
-header.scrolled {
-    background: rgba(2, 6, 23, 0.85) !important;
-    backdrop-filter: blur(16px) !important;
-    border-bottom: 1px solid rgba(56, 189, 248, 0.2) !important;
-    box-shadow: 0 4px 30px rgba(0,0,0,0.5) !important;
+.elite-project-card {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(15, 23, 42, 0.3);
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-.typed-cursor { color: #38bdf8; }
+.elite-project-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(
+        from 0deg,
+        transparent 0%,
+        transparent 40%,
+        rgba(255, 0, 60, 0.3) 50%,
+        transparent 60%,
+        transparent 100%
+    );
+    animation: rotate-border 4s linear infinite;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.elite-project-card:hover::before {
+    opacity: 1;
+}
+
+.elite-project-card::after {
+    content: '';
+    position: absolute;
+    inset: 1px;
+    background: #0f172a;
+    border-radius: inherit;
+    z-index: 0;
+}
+
+.elite-project-card > * {
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes rotate-border {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.premium-badge {
+    background: linear-gradient(90deg, #facc15, #eab308);
+    color: #000;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 0 10px rgba(234, 179, 8, 0.5);
+}
 
 /* Theme Overrides for Midnight Mode */
-body { color: #f8fafc !important; background-color: #020617 !important; }
+body { color: #f8fafc !important; background-color: #000000 !important; }
 .text-white { color: #ffffff !important; }
 .text-gray-200 { color: #f1f5f9 !important; }
 .text-gray-300 { color: #e2e8f0 !important; }
@@ -65,10 +274,74 @@ body { color: #f8fafc !important; background-color: #020617 !important; }
     background: rgba(255, 255, 255, 0.03) !important; 
     border: 1px solid rgba(255,255,255,0.05) !important; 
 }
-.bg-white\/5 { background-color: rgba(56, 189, 248, 0.05) !important; }
-.border-white\/10 { border-color: rgba(129, 140, 248, 0.15) !important; }
-.border-white\/5 { border-color: rgba(56, 189, 248, 0.1) !important; }
-.border-white\/20 { border-color: rgba(255,255,255,0.15) !important; }
+
+.animation-delay-2000 { animation-delay: 2s; }
+.animation-delay-4000 { animation-delay: 4s; }
+
+/* Custom Glowing Cursor */
+.cursor-follower {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    background: rgba(56, 189, 248, 0.3);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 100;
+    transition: transform 0.1s ease-out, opacity 0.3s ease;
+    filter: blur(4px);
+    mix-blend-mode: screen;
+}
+
+.cursor-dot {
+    position: fixed;
+    width: 6px;
+    height: 6px;
+    background: #ffffff;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 101;
+    transition: transform 0.05s ease-out;
+}
+
+.elite-project-card:hover {
+    border-color: rgba(56, 189, 248, 0.5) !important;
+    box-shadow: 0 0 30px rgba(56, 189, 248, 0.2);
+    transform: translateY(-10px) scale(1.02);
+}
+
+.elite-project-card .premium-badge {
+    animation: glow-pulse 2s infinite alternate;
+}
+
+@keyframes glow-pulse {
+    0% { box-shadow: 0 0 5px rgba(234, 179, 8, 0.4); }
+    100% { box-shadow: 0 0 15px rgba(234, 179, 8, 0.8); }
+}
+
+/* Glass Card Refinement */
+.glass-card {
+    background: rgba(255, 255, 255, 0.02) !important;
+    backdrop-filter: blur(20px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Section Header Glow */
+.text-gradient {
+    filter: drop-shadow(0 0 8px rgba(121, 40, 202, 0.4));
+}
+
+.magnetic-wrap {
+    display: inline-block;
+    transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}header.scrolled {
+    background: #000000 !important;
+    backdrop-filter: blur(16px) !important;
+    border-bottom: 1px solid rgba(56, 189, 248, 0.2) !important;
+    box-shadow: 0 4px 30px rgba(0,0,0,0.8) !important;
+}
+
+.typed-cursor { color: #38bdf8; }
 
 .mix-blend-screen { mix-blend-mode: screen !important; }
 
@@ -79,3 +352,251 @@ input, textarea {
 }
 input::placeholder, textarea::placeholder { color: #94a3b8 !important; }
 input:focus, textarea:focus { border-color: #38bdf8 !important; outline: none; box-shadow: 0 0 10px rgba(56, 189, 248, 0.2); }
+
+/* Funny Planet Sticker Styles - Refined */
+.solar-system-container {
+    background: #000;
+    overflow: visible; /* Allow stickers to pop out if needed */
+}
+
+.funny-galaxy {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Funny Planet Sticker Styles - Premium Color Update */
+.solar-system-container {
+    background: radial-gradient(circle at center, #0a0a2a 0%, #000 70%);
+    overflow: visible;
+}
+
+.funny-galaxy {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sun-sticker {
+    width: 120px;
+    height: 120px;
+    z-index: 20;
+    filter: drop-shadow(0 0 30px rgba(255, 170, 0, 0.6));
+    cursor: pointer;
+}
+
+.sticker-orbit {
+    position: absolute;
+    border: 1px solid rgba(56, 189, 248, 0.15); /* Glowing Cyan Orbits */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    box-shadow: inset 0 0 10px rgba(56, 189, 248, 0.05);
+}
+
+.orbit-1 { width: 200px; height: 200px; }
+.orbit-2 { width: 280px; height: 280px; }
+.orbit-3 { width: 360px; height: 360px; }
+.orbit-4 { width: 460px; height: 460px; }
+.orbit-5 { width: 580px; height: 580px; }
+.orbit-6 { width: 720px; height: 720px; }
+
+.planet-sticker {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    left: 100%;
+    margin-left: -30px;
+    pointer-events: auto;
+    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.4));
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 0.3s;
+}
+
+.planet-sticker:hover {
+    filter: drop-shadow(0 0 30px rgba(168, 85, 247, 1)); /* Purple Glow on Hover */
+    z-index: 100;
+}
+
+.planet-sticker::after {
+    content: attr(data-name);
+    position: absolute;
+    top: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(45deg, #facc15, #eab308); /* Gold Gradient Labels */
+    color: #000;
+    padding: 3px 12px;
+    border-radius: 8px;
+    font-size: 11px;
+    font-weight: 900;
+    white-space: nowrap;
+    opacity: 0;
+    transition: 0.3s;
+    box-shadow: 0 5px 15px rgba(250, 204, 21, 0.3);
+    border: 1px solid rgba(0,0,0,0.1);
+}
+
+.planet-sticker:hover::after {
+    opacity: 1;
+    top: -45px;
+}
+
+.funny-python-container {
+    background: #111;
+    border: 2px solid #facc15;
+    border-radius: 50%;
+    overflow: hidden;
+    width: 60px;
+    height: 60px;
+}
+
+@keyframes sticker-float {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    33% { transform: translate(5px, -10px) rotate(2deg); }
+    66% { transform: translate(-5px, 5px) rotate(-2deg); }
+}
+
+/* Mobile Responsiveness for Funny Galaxy */
+@media (max-width: 768px) {
+    .solar-system-container {
+        height: 400px;
+        background: #000; /* Flat black on mobile for performance */
+    }
+    
+    .sun-sticker {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .orbit-1 { width: 120px; height: 120px; }
+    .orbit-2 { width: 160px; height: 160px; }
+    .orbit-3 { width: 210px; height: 210px; }
+    .orbit-4 { width: 260px; height: 260px; }
+    .orbit-5 { width: 310px; height: 310px; }
+    .orbit-6 { width: 360px; height: 360px; }
+    
+    .planet-sticker {
+        width: 40px;
+        height: 40px;
+        margin-left: -20px;
+    }
+
+    .planet-sticker::after {
+        font-size: 8px;
+        padding: 1px 6px;
+        top: -25px;
+    }
+}
+
+/* Tagda Bento Section Styles - Restored */
+#about {
+    background: #050505;
+}
+
+.tagda-bg-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 25vw;
+    font-weight: 900;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.05);
+    z-index: 0;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+/* Cyber-Glass Bento Refinement */
+.bento-card {
+    background: rgba(10, 10, 15, 0.7);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.aurora-bg {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(125deg, transparent 40%, rgba(0, 255, 170, 0.05) 50%, transparent 60%);
+    background-size: 200% 200%;
+    animation: aurora-flow 6s linear infinite;
+    pointer-events: none;
+    z-index: -1;
+}
+
+@keyframes aurora-flow {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 200% 200%; }
+}
+
+.bento-card::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    background: linear-gradient(90deg, #00ffaa, #00ccff, #ff0055, #00ffaa);
+    background-size: 400% 400%;
+    z-index: -2;
+    opacity: 0;
+    transition: opacity 0.4s;
+    animation: border-flow 8s linear infinite;
+}
+
+.bento-card:hover::before {
+    opacity: 0.6;
+}
+
+.bento-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 50px rgba(0, 255, 170, 0.15);
+}
+
+.tech-tag {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+    padding: 6px 16px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.tech-tag:hover {
+    background: #00ffaa;
+    color: #000;
+    box-shadow: 0 0 20px rgba(0, 255, 170, 0.4);
+    transform: scale(1.05);
+}
+
+/* Funny Planet Sticker Styles - Emerald Update */
+.solar-system-container {
+    background: radial-gradient(circle at center, #051510 0%, #000 80%);
+}
+
+.sticker-orbit {
+    border: 1px solid rgba(0, 255, 170, 0.1);
+    box-shadow: inset 0 0 10px rgba(0, 255, 170, 0.03);
+}
+
+.planet-sticker:hover {
+    filter: drop-shadow(0 0 30px #00ffaa);
+}
+
+.planet-sticker::after {
+    background: linear-gradient(45deg, #00ffaa, #00ccff);
+    box-shadow: 0 5px 15px rgba(0, 255, 170, 0.3);
+}

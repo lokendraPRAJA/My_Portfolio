@@ -3,10 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio of an enthusiastic Frontend Developer specializing in creating immersive and interactive web experiences.">
-    <meta name="keywords" content="Portfolio, Frontend Developer, Web Developer, React, Tailwind, GSAP">
+    
+    <!-- Primary Meta Tags -->
+    <title>Lokendra Prajapati | Professional Frontend Developer Portfolio</title>
+    <meta name="title" content="Lokendra Prajapati | Professional Frontend Developer Portfolio">
+    <meta name="description" content="Portfolio of Lokendra Prajapati, a passionate Frontend Developer specializing in creating immersive, interactive, and premium web experiences using React, Tailwind, and GSAP.">
+    <meta name="keywords" content="Lokendra, Lokendra Prajapati, Lokendra Codx, Frontend Developer, Web Developer, React Developer, India, Portfolio, UI/UX Design">
     <meta name="author" content="Lokendra Prajapati">
-    <title>Lokendra Prajapati | Frontend Developer</title>
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://lokendraprajapati.vercel.app/">
+    <meta property="og:title" content="Lokendra Prajapati | Frontend Developer">
+    <meta property="og:description" content="Explore the portfolio of Lokendra Prajapati. Immersive web experiences and premium UI design.">
+    <meta property="og:image" content="https://lokendraprajapati.vercel.app/2.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://lokendraprajapati.vercel.app/">
+    <meta property="twitter:title" content="Lokendra Prajapati | Frontend Developer">
+    <meta property="twitter:description" content="Explore the portfolio of Lokendra Prajapati. Immersive web experiences and premium UI design.">
+    <meta property="twitter:image" content="https://lokendraprajapati.vercel.app/2.jpg">
+
+    <!-- JSON-LD Structured Data for Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Lokendra Prajapati",
+      "url": "https://lokendraprajapati.vercel.app/",
+      "image": "https://lokendraprajapati.vercel.app/2.jpg",
+      "sameAs": [
+        "https://github.com/lokendraPRAJA",
+        "https://www.linkedin.com/in/lokendra-prajapati-675406380/",
+        "https://www.instagram.com/lokendra.codx"
+      ],
+      "jobTitle": "Frontend Developer",
+      "description": "Lokendra Prajapati is a professional Frontend Developer based in India, specializing in interactive web experiences.",
+      "knowsAbout": ["Frontend Development", "Web Design", "JavaScript", "React", "Tailwind CSS", "GSAP"]
+    }
+    </script>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,13 +61,15 @@
                         sans: ['Montserrat', 'sans-serif'],
                     },
                     colors: {
-                        background: '#020617',
-                        surface: '#0f172a',
-                        primary: '#38bdf8',
-                        secondary: '#818cf8',
+                        background: '#050505',
+                        surface: '#0a0a0a',
+                        primary: '#ff003c', /* Dark Crimson Red */
+                        secondary: '#8a0021', /* Deep Blood Red */
+                        accent: '#ff3333', /* Neon Red for highlights */
                     },
                     animation: {
                         'blob': 'blob 7s infinite',
+                        'glitch': 'glitch 1s infinite',
                     },
                     keyframes: {
                         blob: {
@@ -52,32 +91,33 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body class="bg-background text-gray-200 font-sans antialiased overflow-x-hidden selection:bg-primary selection:text-white">
+    <!-- Noise Overlay (Next Level) -->
+    <div class="fixed inset-0 pointer-events-none z-[9999] opacity-[0.05] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]"></div>
     
     <!-- Dynamic Island -->
-    <div id="dynamic-island" class="fixed top-auto bottom-6 md:bottom-auto md:top-4 left-1/2 -translate-x-1/2 z-[60] bg-surface/80 backdrop-blur-md text-white rounded-full flex items-center justify-center transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] overflow-hidden shadow-[0_0_20px_rgba(112,0,255,0.3)] border border-white/10 w-[200px] h-[45px] hover:w-[320px] hover:h-[60px] group cursor-pointer">
+    <div id="dynamic-island" class="fixed top-auto bottom-6 md:bottom-auto md:top-6 left-1/2 -translate-x-1/2 z-[60] bg-[#000000]/80 backdrop-blur-2xl text-white rounded-[2rem] flex items-center justify-center transition-all duration-700 ease-[cubic-bezier(0.19,1,0.22,1)] overflow-hidden shadow-[0_0_40px_rgba(0,255,170,0.2)] border border-white/20 w-[180px] h-[36px] hover:w-[360px] hover:h-[70px] group cursor-pointer">
         <!-- Default State -->
-        <div class="absolute flex items-center gap-3 transition-opacity duration-300 group-hover:opacity-0 group-hover:pointer-events-none">
-            <span class="relative flex h-3 w-3">
-              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-              <span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+        <div class="absolute flex items-center gap-3 transition-all duration-500 group-hover:opacity-0 group-hover:scale-90 group-hover:pointer-events-none">
+            <span class="relative flex h-2 w-2">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
             </span>
-            <span class="text-sm font-medium tracking-wide">Available for Work</span>
+            <span class="text-[11px] font-bold uppercase tracking-[0.2em] text-gray-400">Status: Active</span>
         </div>
         
         <!-- Expanded State -->
-        <div class="absolute opacity-0 flex items-center justify-around w-full px-8 transition-opacity duration-300 group-hover:opacity-100 group-hover:delay-150">
-            <a href="https://api.whatsapp.com/send?phone=919691795917&text=Hi%20Lokendra,%20I'd%20like%20to%20discuss%20a%20project!" target="_blank" class="text-[#25D366] hover:text-white hover:scale-110 transition-all text-2xl" title="WhatsApp Me"><i class="fab fa-whatsapp"></i></a>
-            <a href="tel:9691795917" class="text-primary hover:text-white hover:scale-110 transition-all text-2xl" title="Call Me"><i class="fas fa-phone-alt"></i></a>
-            <a href="mailto:Lokenpraja6688@gmail.com" class="text-secondary hover:text-white hover:scale-110 transition-all text-2xl" title="Email Me"><i class="fas fa-envelope"></i></a>
+        <div class="absolute opacity-0 flex items-center justify-between w-full px-10 transition-all duration-500 group-hover:opacity-100 group-hover:scale-100 scale-90 translate-y-2 group-hover:translate-y-0">
+            <a href="https://api.whatsapp.com/send?phone=919691795917" target="_blank" class="text-[#25D366] hover:scale-125 transition-transform text-2xl" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="tel:9691795917" class="text-primary hover:scale-125 transition-transform text-2xl" title="Call"><i class="fas fa-phone-alt"></i></a>
+            <a href="mailto:Lokenpraja6688@gmail.com" class="text-accent hover:scale-125 transition-transform text-2xl" title="Email"><i class="fas fa-envelope"></i></a>
+            <div class="h-8 w-[1px] bg-white/10 mx-2"></div>
+            <span class="text-[10px] font-black uppercase tracking-widest text-white leading-none">Hire<br>Me</span>
         </div>
     </div>
 
-    <!-- Ambient Background -->
-    <div id="particles-js" class="fixed inset-0 z-[-2] pointer-events-none"></div>
+    <!-- Ambient Background (Only Petals) -->
     <div class="fixed inset-0 z-[-1] overflow-hidden pointer-events-none">
-        <div class="absolute top-0 left-1/4 w-96 h-96 bg-primary/20 rounded-full mix-blend-screen filter blur-[100px] animate-blob"></div>
-        <div class="absolute top-0 right-1/4 w-96 h-96 bg-secondary/20 rounded-full mix-blend-screen filter blur-[100px] animate-blob animation-delay-2000"></div>
-        <div class="absolute -bottom-32 left-1/2 w-96 h-96 bg-blue-600/20 rounded-full mix-blend-screen filter blur-[100px] animate-blob animation-delay-4000"></div>
+        <!-- Everything except petals removed for a clean focused look -->
     </div>
 
     <!-- Header / Navbar -->
@@ -121,15 +161,22 @@
 
     <main>
         <!-- Hero Section -->
-        <section id="home" class="min-h-screen flex items-center justify-center pt-20 relative px-6">
-            <div class="container mx-auto grid md:grid-cols-2 gap-12 items-center">
+        <section id="home" class="min-h-screen flex items-center justify-center pt-20 relative px-6 overflow-hidden">
+            <!-- Khatarnak Cosmic Background -->
+            <div class="absolute inset-0 z-0 pointer-events-none">
+                <img src="futuristic_workspace_v2.png" alt="Futuristic Chaos" class="w-full h-full object-cover opacity-40 mix-blend-screen scale-105 animate-[float_10s_ease-in-out_infinite]" style="filter: contrast(1.2) saturate(1.5);">
+                <div class="absolute inset-0 bg-gradient-to-b from-background/40 via-background/70 to-background"></div>
+                <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,#050505_100%)] opacity-90"></div>
+            </div>
+
+            <div class="container mx-auto grid md:grid-cols-2 gap-12 items-center relative z-10">
                 <div class="flex flex-col space-y-6 z-10 hero-content">
                     <div class="inline-block px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm w-max">
                         <span class="text-sm font-medium text-secondary">🚀 Welcome to my digital space</span>
                     </div>
                     <h1 class="text-4xl sm:text-5xl md:text-7xl font-bold text-white leading-tight">
                         Hi, I'm <br>
-                        <span class="text-gradient">
+                        <span class="text-gradient animate-glitch tracking-tighter">
                             Lokendra Prajapati
                         </span>
                     </h1>
@@ -140,31 +187,52 @@
                         Crafting highly interactive, responsive, and premium web experiences with modern technologies. Let's turn your ideas into digital reality.
                     </p>
                     <div class="flex flex-wrap gap-4 pt-4">
-                        <a href="#projects" class="px-8 py-3 rounded-lg bg-gradient-to-r from-primary to-purple-600 text-white font-medium hover:shadow-lg hover:shadow-primary/30 transition-all duration-300 hover:-translate-y-1">
-                            View Work
-                        </a>
-                        <a href="#contact" class="px-8 py-3 rounded-lg border border-white/20 hover:bg-white/5 text-white font-medium transition-all duration-300 hover:-translate-y-1">
-                            Contact Me
-                        </a>
+                        <div class="magnetic-wrap">
+                            <a href="#projects" class="px-8 py-3 rounded-lg bg-gradient-to-r from-primary to-secondary text-black font-black hover:shadow-lg hover:shadow-primary/30 transition-all duration-300 hover:-translate-y-1 block uppercase tracking-widest text-xs">
+                                Launch Projects
+                            </a>
+                        </div>
+                        <div class="magnetic-wrap">
+                            <a href="#contact" class="px-8 py-3 rounded-lg border border-white/20 hover:bg-white/5 text-white font-medium transition-all duration-300 hover:-translate-y-1 block">
+                                Contact Me
+                            </a>
+                        </div>
                     </div>
                 </div>
                 
                 <div class="relative z-10 flex order-first md:order-last justify-center items-center hero-image mt-8 mb-8 md:mt-4 md:mb-0">
-                    <div class="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-full border border-white/10 p-2 bg-gradient-to-b from-white/5 to-transparent backdrop-blur-sm glass-card">
-                        <div class="absolute inset-0 bg-gradient-to-tr from-primary/20 to-secondary/20 rounded-full animate-pulse"></div>
-                        <div class="w-full h-full rounded-full bg-surface border border-white/10 flex items-center justify-center overflow-hidden relative group">
-                           <img src="2.jpg" alt="Lokendra Prajapati" class="w-full h-full object-cover object-top group-hover:scale-100 transition-transform duration-700">
-                        </div>
-                        
-                        <!-- Floating badges -->
-                        <div class="absolute -top-2 -right-2 md:-top-4 md:-right-4 bg-surface border border-white/10 p-3 md:p-4 rounded-xl shadow-xl floating-badge" style="animation-delay: 0s;">
-                            <i class="fab fa-react text-blue-400 text-2xl md:text-3xl"></i>
-                        </div>
-                        <div class="absolute top-1/2 -left-4 md:-left-8 bg-surface border border-white/10 p-3 md:p-4 rounded-xl shadow-xl floating-badge" style="animation-delay: 1.5s;">
-                            <i class="fab fa-js text-yellow-400 text-2xl md:text-3xl"></i>
-                        </div>
-                        <div class="absolute -bottom-2 right-4 md:-bottom-4 md:right-10 bg-surface border border-white/10 p-3 md:p-4 rounded-xl shadow-xl floating-badge" style="animation-delay: 3s;">
-                            <i class="fab fa-css3-alt text-blue-500 text-2xl md:text-3xl"></i>
+                    <div class="magnetic-wrap">
+                        <div class="relative w-[340px] h-[340px] sm:w-[420px] sm:h-[420px] md:w-[600px] md:h-[600px] flex items-center justify-center mt-10 md:mt-0">
+                            
+                            <!-- Deep Ambient Glow -->
+                            <div class="absolute inset-[30px] bg-primary/10 rounded-full blur-3xl pointer-events-none z-0"></div>
+
+                            <!-- Custom Frame (frame1.png) -->
+                            <div class="absolute inset-[-15px] md:inset-[1px] z-0 flex items-center justify-center pointer-events-none">
+                                <img src="frame1.png" alt="Custom Frame" class="w-full h-full object-contain drop-shadow-[0_0_25px_rgba(255,0,60,0.5)] scale-[1.15] md:scale-[1.20]">
+                            </div>
+                            
+                            <!-- Profile Picture (Fitted perfectly inside the frame's center) -->
+                            <div class="absolute w-[62%] h-[62%] rounded-full bg-surface overflow-hidden z-10 shadow-[0_0_30px_rgba(0,0,0,0.8)] border-2 border-primary/20 transition-all duration-300 group">
+                               <img src="2.jpg" alt="Lokendra Prajapati" class="w-full h-full object-cover object-top filter contrast-110 brightness-105 group-hover:scale-110 transition-transform duration-700">
+                               <div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 mix-blend-overlay"></div>
+                            </div>
+                            
+                            <!-- Glassmorphic Badges -->
+                            <!-- React Badge (Top Right) -->
+                            <div class="absolute top-[8%] right-[8%] md:top-[12%] md:right-[12%] z-20 w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-[#050505]/80 backdrop-blur-md flex items-center justify-center border border-white/5 shadow-[0_4px_15px_rgba(0,0,0,0.5)] hover:scale-110 transition-transform duration-300">
+                                <i class="fab fa-react text-primary text-3xl"></i>
+                            </div>
+                            
+                            <!-- JS Badge (Middle Left) -->
+                            <div class="absolute top-[45%] -left-[2%] md:-left-[4%] z-20 w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-[#050505]/80 backdrop-blur-md flex items-center justify-center border border-white/5 shadow-[0_4px_15px_rgba(0,0,0,0.5)] hover:scale-110 transition-transform duration-300">
+                                <div class="w-8 h-8 md:w-9 md:h-9 bg-[#f7df1e] flex items-center justify-center font-bold text-black text-sm md:text-base rounded-sm">JS</div>
+                            </div>
+                            
+                            <!-- CSS Badge (Bottom Right) -->
+                            <div class="absolute bottom-[2%] right-[20%] md:bottom-[8%] md:right-[15%] z-20 w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-[#050505]/80 backdrop-blur-md flex items-center justify-center border border-white/5 shadow-[0_4px_15px_rgba(0,0,0,0.5)] hover:scale-110 transition-transform duration-300">
+                                <i class="fab fa-css3-alt text-secondary text-3xl"></i>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -177,74 +245,136 @@
             </div>
         </section>
 
-        <!-- About Section -->
-        <section id="about" class="py-24 relative z-10 bg-surface/50 border-y border-white/5">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-16 gs_reveal">
-                    <h2 class="text-sm font-bold text-secondary uppercase tracking-widest mb-2">Who am I</h2>
-                    <h3 class="text-3xl md:text-5xl font-bold text-white">About <span class="text-gradient">Me</span></h3>
+        <!-- Solar System Section -->
+        <section id="universe" class="py-24 relative overflow-hidden bg-black">
+            <div class="container mx-auto px-6 relative z-10">
+                <div class="text-center mb-20 gs_reveal">
+                    <h2 class="text-sm font-bold text-primary uppercase tracking-[0.3em] mb-3">System Architecture</h2>
+                    <h3 class="text-4xl md:text-6xl font-black text-white">Digital <span class="text-gradient">Universe</span></h3>
+                    <p class="text-gray-500 mt-4 max-w-2xl mx-auto">Exploring the orbital mechanics of my tech stack and creative process.</p>
                 </div>
-                
-                <div class="grid md:grid-cols-2 gap-12 items-center">
-                    <div class="gs_reveal gs_reveal_fromLeft">
-                        <div class="relative rounded-2xl overflow-hidden group h-[400px] border border-white/10 bg-[#0d1117] shadow-2xl flex flex-col">
-                            <!-- Mac Window Controls -->
-                            <div class="flex items-center px-4 py-3 bg-[#161b22] border-b border-white/5">
-                                <div class="flex space-x-2">
-                                    <div class="w-3 h-3 rounded-full bg-red-500"></div>
-                                    <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
-                                    <div class="w-3 h-3 rounded-full bg-green-500"></div>
-                                </div>
-                                <div class="flex-1 text-center text-xs text-gray-500 font-mono pr-8">lokendra.js</div>
-                            </div>
-                            
-                            <!-- Code Content -->
-                            <div class="p-6 text-sm md:text-base font-mono overflow-hidden flex-1 bg-gradient-to-br from-[#0d1117] to-surface">
-                                <div class="text-gray-500 mb-3">// Defining the developer profile</div>
-                                <div class="flex mb-1"><span class="text-pink-500 mr-2">const</span> <span class="text-blue-400">developer</span> <span class="text-white mx-2">=</span> <span class="text-yellow-300">{</span></div>
-                                <div class="pl-6 flex mb-1"><span class="text-sky-300">name:</span> <span class="text-green-300 ml-2">'Lokendra Prajapati'</span><span class="text-white">,</span></div>
-                                <div class="pl-6 flex mb-1"><span class="text-sky-300">role:</span> <span class="text-green-300 ml-2">'Frontend Developer'</span><span class="text-white">,</span></div>
-                                <div class="pl-6 flex mb-1"><span class="text-sky-300">location:</span> <span class="text-green-300 ml-2">'India'</span><span class="text-white">,</span></div>
-                                <div class="pl-6 flex mb-1 whitespace-nowrap"><span class="text-sky-300">skills:</span> <span class="text-yellow-300 ml-2">[</span><span class="text-green-300">'HTML'</span><span class="text-white">,</span> <span class="text-green-300">'Tailwind'</span><span class="text-white">,</span> <span class="text-green-300">'JS'</span><span class="text-yellow-300">]</span><span class="text-white">,</span></div>
-                                <div class="pl-6 flex mb-1"><span class="text-sky-300">hardWorker:</span> <span class="text-orange-400 ml-2">true</span></div>
-                                <div class="flex mb-4"><span class="text-yellow-300">}</span><span class="text-white">;</span></div>
-                                
-                                <div class="text-gray-500 mb-2">// Execute constantly</div>
-                                <div class="flex"><span class="text-blue-400">developer</span><span class="text-white">.</span><span class="text-yellow-200">code</span><span class="text-pink-500">()</span><span class="text-white">;</span></div>
-                                
-                                <!-- Blinking Cursor -->
-                                <div class="mt-4 w-2 h-5 bg-primary animate-pulse"></div>
-                            </div>
+
+                <div class="solar-system-container relative h-[700px] md:h-[950px] w-full flex items-center justify-center overflow-visible">
+                    <!-- Funny Planet Stickers -->
+                    <div class="funny-galaxy relative w-full h-full flex items-center justify-center">
+                        <img src="sun_sticker.png" alt="Funny Sun" class="sticker sun-sticker">
+                        
+                        <div class="sticker-orbit orbit-1">
+                            <img src="earth_sticker.png" alt="Funny Earth" class="sticker planet-sticker" data-name="React">
+                        </div>
+                        <div class="sticker-orbit orbit-2">
+                            <img src="mars_sticker.png" alt="Funny Mars" class="sticker planet-sticker" data-name="JavaScript">
+                        </div>
+                        <div class="sticker-orbit orbit-3">
+                            <img src="saturn_sticker.png" alt="Funny Saturn" class="sticker planet-sticker" data-name="Tailwind">
+                        </div>
+                        <div class="sticker-orbit orbit-4">
+                            <img src="jupiter_sticker.png" alt="Funny Jupiter" class="sticker planet-sticker" data-name="Node.js">
+                        </div>
+                        <div class="sticker-orbit orbit-5">
+                            <img src="uranus_sticker.png" alt="Funny Uranus" class="sticker planet-sticker" data-name="GSAP">
+                        </div>
+                        <div class="sticker-orbit orbit-6">
+                            <img src="neptune_sticker.png" alt="Funny Neptune" class="sticker planet-sticker" data-name="Flutter">
                         </div>
                     </div>
+                </div>
+            </div>
+            
+            <!-- Cosmic Background Elements -->
+            <div class="absolute inset-0 z-0">
+                <div class="stars-parallax"></div>
+                <div class="nebula-glow-1"></div>
+                <div class="nebula-glow-2"></div>
+            </div>
+        </section>
+
+        <!-- About Section (Tagda Bento Grid) -->
+        <section id="about" class="py-24 relative z-10 bg-black overflow-hidden border-y border-white/5">
+            <!-- Massive Background Text -->
+            <div class="tagda-bg-text">ABOUT ME</div>
+            
+            <div class="container mx-auto px-6 relative z-10 max-w-7xl">
+                <div class="grid md:grid-cols-3 gap-12 items-start">
+                    <!-- Left Title Area -->
+                    <div class="gs_reveal">
+                        <span class="text-secondary font-mono text-xs mb-4 block tracking-widest uppercase">01 / DISCOVERY</span>
+                        <h3 class="text-4xl md:text-5xl font-black text-white mb-6 leading-tight">THE <br><span class="text-gradient">PROFILE</span></h3>
+                        <p class="text-gray-400 leading-relaxed max-w-sm">Exploring the intersection of design and engineering to build immersive, high-performance web experiences.</p>
+                    </div>
                     
-                    <div class="space-y-6 gs_reveal gs_reveal_fromRight">
-                        <h4 class="text-2xl font-bold text-white">Passionate Frontend Developer based in <span class="text-secondary">India</span></h4>
-                        <p class="text-gray-400 leading-relaxed">
-                            As an enthusiastic and detail-oriented Frontend Developer, I have a profound passion for UI/UX design and building interactive web applications. I love bridging the gap between design and engineering to bring beautiful, highly performant interfaces to life.
-                        </p>
-                        <p class="text-gray-400 leading-relaxed">
-                            Though I am at the beginning of my professional journey, my expertise lies in modern JavaScript, HTML5, CSS architectures like Tailwind, and creating fluid animations. I am a quick learner, constantly exploring new technologies to build modern web experiences.
-                        </p>
-                        
-                        <div class="grid grid-cols-2 gap-4 pt-4">
-                            <div class="border border-white/10 bg-white/5 rounded-xl p-4 flex items-center space-x-4">
-                                <div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary">
-                                    <i class="fas fa-code text-xl"></i>
-                                </div>
-                                <div>
-                                    <h5 class="text-white font-bold text-xl">10+</h5>
-                                    <p class="text-xs text-gray-500 uppercase">Tech Skills</p>
-                                </div>
+                    <!-- Right Bento Grid Area -->
+                    <div class="md:col-span-2">
+                        <div class="grid sm:grid-cols-2 gap-x-12 gap-y-16">
+                            
+                            <div class="gs_reveal">
+                                <h4 class="text-xl font-bold text-white mb-4 flex items-center gap-3">
+                                    <span class="w-8 h-[1px] bg-primary"></span> Visual Experiences
+                                </h4>
+                                <p class="text-sm text-gray-500 leading-relaxed">I don't just build websites; I craft digital ecosystems that breathe and react, blending industrial-grade engineering with artistic UI precision.</p>
                             </div>
-                            <div class="border border-white/10 bg-white/5 rounded-xl p-4 flex items-center space-x-4">
-                                <div class="w-12 h-12 rounded-full bg-secondary/20 flex items-center justify-center text-secondary">
-                                    <i class="fas fa-check-circle text-xl"></i>
-                                </div>
-                                <div>
-                                    <h5 class="text-white font-bold text-xl">02</h5>
-                                    <p class="text-xs text-gray-500 uppercase">Projects Built</p>
-                                </div>
+                            
+                            <div class="gs_reveal">
+                                <h4 class="text-xl font-bold text-white mb-4 flex items-center gap-3">
+                                    <span class="w-8 h-[1px] bg-secondary"></span> System Protocol
+                                </h4>
+                                <p class="text-sm text-gray-500 leading-relaxed">Focus: Performance. Aesthetic: Elite. Status: Innovating. A structured approach to writing maintainable, high-quality code.</p>
+                            </div>
+                            
+                            <div class="gs_reveal">
+                                <h4 class="text-xl font-bold text-white mb-4 flex items-center gap-3">
+                                    <span class="w-8 h-[1px] bg-purple-500"></span> Track Record
+                                </h4>
+                                <p class="text-sm text-gray-500 leading-relaxed">02+ active years of delivering premium web experiences with 100% commitment to client success and pixel-perfect design.</p>
+                            </div>
+                            
+                            <div class="gs_reveal">
+                                <h4 class="text-xl font-bold text-white mb-4 flex items-center gap-3">
+                                    <span class="w-8 h-[1px] bg-green-500"></span> Ready for Scale
+                                </h4>
+                                <p class="text-sm text-gray-500 leading-relaxed">Currently looking for high-impact projects and teams. Let's get in touch to build the next generation of web applications.</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section (Aerukart Style) -->
+        <section id="services" class="py-24 relative z-10 border-t border-white/5">
+            <div class="container mx-auto px-6">
+                <div class="grid md:grid-cols-3 gap-12">
+                    <div class="gs_reveal">
+                        <span class="text-secondary font-mono text-xs mb-4 block tracking-widest uppercase">01 / CAPABILITIES</span>
+                        <h3 class="text-4xl font-black text-white mb-6 leading-tight">Digital <br><span class="text-gradient">Experience</span></h3>
+                        <p class="text-gray-400 leading-relaxed max-w-sm">Creating immersive digital journeys through strategic UI/UX design and high-performance development.</p>
+                    </div>
+                    <div class="space-y-12 md:col-span-2">
+                        <div class="grid sm:grid-cols-2 gap-x-12 gap-y-16">
+                            <div class="gs_reveal">
+                                <h4 class="text-xl font-bold text-white mb-4 flex items-center gap-3">
+                                    <span class="w-8 h-[1px] bg-primary"></span> UI/UX Design
+                                </h4>
+                                <p class="text-sm text-gray-500 leading-relaxed">User research, wireframing, prototyping, and high-fidelity visual design for web and mobile.</p>
+                            </div>
+                            <div class="gs_reveal">
+                                <h4 class="text-xl font-bold text-white mb-4 flex items-center gap-3">
+                                    <span class="w-8 h-[1px] bg-secondary"></span> Development
+                                </h4>
+                                <p class="text-sm text-gray-500 leading-relaxed">Custom frontend architecture, React ecosystems, and performance-driven interactive web apps.</p>
+                            </div>
+                            <div class="gs_reveal">
+                                <h4 class="text-xl font-bold text-white mb-4 flex items-center gap-3">
+                                    <span class="w-8 h-[1px] bg-purple-500"></span> Branding
+                                </h4>
+                                <p class="text-sm text-gray-500 leading-relaxed">Visual identity, logotype design, and design systems for a consistent brand presence.</p>
+                            </div>
+                            <div class="gs_reveal">
+                                <h4 class="text-xl font-bold text-white mb-4 flex items-center gap-3">
+                                    <span class="w-8 h-[1px] bg-green-500"></span> Motion
+                                </h4>
+                                <p class="text-sm text-gray-500 leading-relaxed">Smooth GSAP transitions, micro-interactions, and cinematic web animations.</p>
                             </div>
                         </div>
                     </div>
@@ -252,62 +382,169 @@
             </div>
         </section>
 
-        <!-- Projects Section -->
+    <!-- Infinite Marquee (Aerukart Style) -->
+    <div class="marquee-container">
+        <div class="marquee-content">
+            <div class="marquee-item"><span>✦</span> Available for Freelance</div>
+            <div class="marquee-item"><span>✦</span> UI/UX Design</div>
+            <div class="marquee-item"><span>✦</span> Full Stack Development</div>
+            <div class="marquee-item"><span>✦</span> Interaction Design</div>
+            <div class="marquee-item"><span>✦</span> Available for Freelance</div>
+            <div class="marquee-item"><span>✦</span> UI/UX Design</div>
+            <div class="marquee-item"><span>✦</span> Full Stack Development</div>
+            <div class="marquee-item"><span>✦</span> Interaction Design</div>
+        </div>
+    </div>
+
+    <!-- Projects Section -->
         <section id="projects" class="py-24 relative z-10">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16 gs_reveal">
                     <h2 class="text-sm font-bold text-secondary uppercase tracking-widest mb-2">Portfolio</h2>
-                    <h3 class="text-3xl md:text-5xl font-bold text-white">Featured <span class="text-gradient">Projects</span></h3>
+                    <h3 class="text-3xl md:text-5xl font-bold text-white">Featured <span class="text-gradient animate-pulse">Projects</span></h3>
                 </div>
                 
-                <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-8">
-                    <!-- Project 1 -->
-                    <div class="project-card rounded-2xl bg-surface border border-white/5 overflow-hidden group gs_reveal" data-tilt data-tilt-max="5" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.2">
-                        <div class="relative h-60 overflow-hidden">
-                            <div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent z-10"></div>
-                            <div class="w-full h-full group-hover:scale-110 transition-transform duration-700">
-                                <img src="jara.png" alt="Jara AI" class="w-full h-full object-cover">
+                <div class="max-w-7xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Project: Freeply -->
+                    <div class="elite-project-card rounded-3xl overflow-hidden group gs_reveal" data-tilt data-tilt-max="10" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.3">
+                        <div class="relative h-72 overflow-hidden">
+                            <div class="absolute inset-0 bg-gradient-to-t from-[#0f172a] via-transparent to-transparent z-10"></div>
+                            <div class="w-full h-full group-hover:scale-105 transition-transform duration-1000 ease-out">
+                                <img src="image.png" alt="Freeply Music App" class="w-full h-full object-cover">
                             </div>
-                            <!-- Tech stack badges -->
+                            <div class="absolute top-4 left-4 z-20">
+                                <span class="premium-badge">Featured Project</span>
+                            </div>
                             <div class="absolute top-4 right-4 z-20 flex gap-2">
-                                <span class="px-2 py-1 text-[10px] font-bold bg-black/50 backdrop-blur-md rounded border border-white/10 text-white">Python</span>
-                                <span class="px-2 py-1 text-[10px] font-bold bg-black/50 backdrop-blur-md rounded border border-white/10 text-white">JavaScript</span>
+                                <span class="px-2 py-1 text-[10px] font-bold bg-black/60 backdrop-blur-md rounded border border-white/10 text-white shadow-xl">Flutter</span>
+                                <span class="px-2 py-1 text-[10px] font-bold bg-black/60 backdrop-blur-md rounded border border-white/10 text-white shadow-xl">Dart</span>
+                            </div>
+                            
+                            <!-- Quick Action Buttons -->
+                            <div class="project-quick-action">
+                                <button class="quick-btn" title="Add to Wishlist"><i class="far fa-heart"></i></button>
+                                <button class="quick-btn" title="Quick View"><i class="far fa-eye"></i></button>
                             </div>
                         </div>
-                        <div class="p-6 relative z-20 -mt-10">
-                            <div class="w-12 h-12 bg-surface rounded-xl border border-white/10 flex items-center justify-center mb-4 shadow-lg group-hover:-translate-y-2 transition-transform duration-300">
-                                <i class="fas fa-brain text-primary"></i>
+                        <div class="p-8 relative z-20 -mt-12">
+                            <div class="w-14 h-14 bg-gradient-to-br from-primary to-secondary rounded-2xl flex items-center justify-center mb-6 shadow-[0_0_20px_rgba(56,189,248,0.4)] group-hover:-translate-y-2 transition-transform duration-500">
+                                <i class="fas fa-music text-white text-xl"></i>
                             </div>
-                            <h4 class="text-xl font-bold text-white mb-2 group-hover:text-primary transition-colors">Jara AI</h4>
-                            <p class="text-sm text-gray-400 mb-4 line-clamp-3">An advanced AI assistant featuring real-time conversational capabilities, powered by a Python backend and OpenRouter API integration, complete with an elegant, responsive web interface.</p>
-                            <a href="https://jara-ai.vercel.app/" target="_blank" class="inline-flex items-center text-sm font-medium text-secondary hover:text-white transition-colors">
-                                View Project <i class="fas fa-arrow-right ml-2 text-xs"></i>
-                            </a>
+                            <h4 class="text-2xl font-black text-white mb-3 group-hover:text-primary transition-colors tracking-tight">Freeply Music</h4>
+                            <p class="text-sm text-gray-400 mb-6 leading-relaxed">The ultimate ad-free music streaming experience. Features official YouTube integration, background playback, and a curated 'High-Engagement' feed engine.</p>
+                            
+                            <!-- Project Details (Aeruk Style) -->
+                            <div class="grid grid-cols-2 gap-4 mb-8 pt-4 border-t border-white/5">
+                                <div>
+                                    <span class="text-[10px] font-mono text-gray-500 uppercase tracking-widest block mb-1">Role</span>
+                                    <span class="text-xs text-white font-bold">Frontend Dev</span>
+                                </div>
+                                <div>
+                                    <span class="text-[10px] font-mono text-gray-500 uppercase tracking-widest block mb-1">Year</span>
+                                    <span class="text-xs text-white font-bold">2026</span>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center justify-between">
+                                <a href="https://freeply-web.vercel.app" target="_blank" class="inline-flex items-center text-sm font-bold text-primary hover:text-white transition-all group/link">
+                                    Launch App <i class="fas fa-external-link-alt ml-2 text-xs group-hover/link:translate-x-1 group-hover/link:-translate-y-1 transition-transform"></i>
+                                </a>
+                                <div class="flex -space-x-2">
+                                    <div class="w-8 h-8 rounded-full border-2 border-[#0f172a] bg-primary/20 flex items-center justify-center" title="YouTube API"><i class="fab fa-youtube text-[10px] text-red-500"></i></div>
+                                    <div class="w-8 h-8 rounded-full border-2 border-[#0f172a] bg-primary/20 flex items-center justify-center" title="Cloud Database"><i class="fas fa-cloud text-[10px] text-blue-400"></i></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- Project 2 -->
-                    <div class="project-card rounded-2xl bg-surface border border-white/5 overflow-hidden group gs_reveal" data-tilt data-tilt-max="5" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.2">
-                        <div class="relative h-60 overflow-hidden">
-                            <div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent z-10"></div>
-                            <div class="w-full h-full group-hover:scale-110 transition-transform duration-700">
-                                <img src="2.jpg" alt="Lokendra.Codx Portfolio" class="w-full h-full object-cover object-[center_20%]">
+                    <!-- Project: Jara AI -->
+                    <div class="elite-project-card rounded-3xl overflow-hidden group gs_reveal" data-tilt data-tilt-max="10" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.3">
+                        <div class="relative h-72 overflow-hidden">
+                            <div class="absolute inset-0 bg-gradient-to-t from-[#0f172a] via-transparent to-transparent z-10"></div>
+                            <div class="w-full h-full group-hover:scale-105 transition-transform duration-1000 ease-out">
+                                <img src="jara.png" alt="Jara AI" class="w-full h-full object-cover">
+                            </div>
+                            <div class="absolute top-4 left-4 z-20">
+                                <span class="premium-badge">AI Assistant</span>
                             </div>
                             <div class="absolute top-4 right-4 z-20 flex gap-2">
-                                <span class="px-2 py-1 text-[10px] font-bold bg-black/50 backdrop-blur-md rounded border border-white/10 text-white">HTML</span>
-                                <span class="px-2 py-1 text-[10px] font-bold bg-black/50 backdrop-blur-md rounded border border-white/10 text-white">Tailwind</span>
-                                <span class="px-2 py-1 text-[10px] font-bold bg-black/50 backdrop-blur-md rounded border border-white/10 text-white">GSAP</span>
+                                <span class="px-2 py-1 text-[10px] font-bold bg-black/60 backdrop-blur-md rounded border border-white/10 text-white shadow-xl">Python</span>
+                                <span class="px-2 py-1 text-[10px] font-bold bg-black/60 backdrop-blur-md rounded border border-white/10 text-white shadow-xl">LLM</span>
+                            </div>
+
+                            <!-- Quick Action Buttons -->
+                            <div class="project-quick-action">
+                                <button class="quick-btn" title="Add to Wishlist"><i class="far fa-heart"></i></button>
+                                <button class="quick-btn" title="Quick View"><i class="far fa-eye"></i></button>
                             </div>
                         </div>
-                        <div class="p-6 relative z-20 -mt-10">
-                            <div class="w-12 h-12 bg-surface rounded-xl border border-white/10 flex items-center justify-center mb-4 shadow-lg group-hover:-translate-y-2 transition-transform duration-300">
-                                <i class="fas fa-user-astronaut text-secondary"></i>
+                        <div class="p-8 relative z-20 -mt-12">
+                            <div class="w-14 h-14 bg-gradient-to-br from-primary to-purple-600 rounded-2xl flex items-center justify-center mb-6 shadow-[0_0_20px_rgba(192,132,252,0.4)] group-hover:-translate-y-2 transition-transform duration-500">
+                                <i class="fas fa-brain text-white text-xl"></i>
                             </div>
-                            <h4 class="text-xl font-bold text-white mb-2 group-hover:text-secondary transition-colors">Lokendra.Codx Portfolio</h4>
-                            <p class="text-sm text-gray-400 mb-4 line-clamp-3">A premium, highly interactive portfolio website featuring a modern Midnight Slate theme, GSAP animations, and 3D tilt effects to showcase my skills and projects.</p>
-                            <a href="#home" class="inline-flex items-center text-sm font-medium text-secondary hover:text-white transition-colors">
-                                View Project <i class="fas fa-arrow-right ml-2 text-xs"></i>
-                            </a>
+                            <h4 class="text-2xl font-black text-white mb-3 group-hover:text-primary transition-colors tracking-tight">Jara AI</h4>
+                            <p class="text-sm text-gray-400 mb-6 leading-relaxed">Advanced conversational AI featuring real-time speech processing and seamless API integrations for a truly intelligent user experience.</p>
+                            
+                            <!-- Project Details (Aeruk Style) -->
+                            <div class="grid grid-cols-2 gap-4 mb-8 pt-4 border-t border-white/5">
+                                <div>
+                                    <span class="text-[10px] font-mono text-gray-500 uppercase tracking-widest block mb-1">Tools</span>
+                                    <span class="text-xs text-white font-bold">Python / LLM</span>
+                                </div>
+                                <div>
+                                    <span class="text-[10px] font-mono text-gray-500 uppercase tracking-widest block mb-1">Status</span>
+                                    <span class="text-xs text-white font-bold">In-Beta</span>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center justify-between">
+                                <a href="https://jara-ai.vercel.app/" target="_blank" class="inline-flex items-center text-sm font-bold text-primary hover:text-white transition-all group/link">
+                                    Live Preview <i class="fas fa-external-link-alt ml-2 text-xs group-hover/link:translate-x-1 group-hover/link:-translate-y-1 transition-transform"></i>
+                                </a>
+                                <div class="flex -space-x-2">
+                                    <div class="w-8 h-8 rounded-full border-2 border-[#0f172a] bg-primary/20 flex items-center justify-center" title="Python"><i class="fab fa-python text-[10px] text-yellow-500"></i></div>
+                                    <div class="w-8 h-8 rounded-full border-2 border-[#0f172a] bg-primary/20 flex items-center justify-center" title="AI Model"><i class="fas fa-microchip text-[10px] text-purple-400"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project: Portfolio -->
+                    <div class="elite-project-card rounded-3xl overflow-hidden group gs_reveal" data-tilt data-tilt-max="10" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.3">
+                        <div class="relative h-72 overflow-hidden">
+                            <div class="absolute inset-0 bg-gradient-to-t from-[#0f172a] via-transparent to-transparent z-10"></div>
+                            <div class="w-full h-full group-hover:scale-105 transition-transform duration-1000 ease-out">
+                                <img src="2.jpg" alt="Lokendra.Codx Portfolio" class="w-full h-full object-cover">
+                            </div>
+                            <div class="absolute top-4 left-4 z-20">
+                                <span class="premium-badge">Web Showcase</span>
+                            </div>
+                            <div class="absolute top-4 right-4 z-20 flex gap-2">
+                                <span class="px-2 py-1 text-[10px] font-bold bg-black/60 backdrop-blur-md rounded border border-white/10 text-white shadow-xl">GSAP</span>
+                                <span class="px-2 py-1 text-[10px] font-bold bg-black/60 backdrop-blur-md rounded border border-white/10 text-white shadow-xl">Tailwind</span>
+                            </div>
+
+                            <!-- Quick Action Buttons -->
+                            <div class="project-quick-action">
+                                <button class="quick-btn" title="Add to Wishlist"><i class="far fa-heart"></i></button>
+                                <button class="quick-btn" title="Quick View"><i class="far fa-eye"></i></button>
+                            </div>
+                        </div>
+                        <div class="p-8 relative z-20 -mt-12">
+                            <div class="w-14 h-14 bg-gradient-to-br from-secondary to-primary rounded-2xl flex items-center justify-center mb-6 shadow-[0_0_20px_rgba(129,140,248,0.4)] group-hover:-translate-y-2 transition-transform duration-500">
+                                <i class="fas fa-gem text-white text-xl"></i>
+                            </div>
+                            <h4 class="text-2xl font-black text-white mb-3 group-hover:text-primary transition-colors tracking-tight">Personal Portfolio</h4>
+                            <p class="text-sm text-gray-400 mb-6 leading-relaxed">A high-fidelity digital ecosystem built with modern technologies, featuring immersive 3D effects and fluid motion design.</p>
+                            <div class="flex items-center justify-between">
+                                <a href="#home" class="inline-flex items-center text-sm font-bold text-primary hover:text-white transition-all group/link">
+                                    Revisit Home <i class="fas fa-redo ml-2 text-xs group-hover/link:rotate-45 transition-transform"></i>
+                                </a>
+                                <div class="flex -space-x-2">
+                                    <div class="w-8 h-8 rounded-full border-2 border-[#0f172a] bg-primary/20 flex items-center justify-center" title="GSAP"><i class="fas fa-bolt text-[10px] text-yellow-400"></i></div>
+                                    <div class="w-8 h-8 rounded-full border-2 border-[#0f172a] bg-primary/20 flex items-center justify-center" title="Responsive"><i class="fas fa-mobile-alt text-[10px] text-green-400"></i></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -317,90 +554,95 @@
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" class="py-24 relative z-10 bg-surface/30 border-t border-white/5">
-            <div class="container mx-auto px-6 max-w-6xl">
-                <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <section id="contact" class="py-32 relative z-10 bg-black overflow-hidden border-t border-white/5">
+            <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(255,0,60,0.05)_0%,transparent_70%)]"></div>
+            <div class="container mx-auto px-6 max-w-7xl relative z-10">
+                <div class="grid lg:grid-cols-2 gap-20 items-center">
                     <!-- Contact Info -->
-                    <div class="space-y-10 gs_reveal gs_reveal_fromLeft">
+                    <div class="space-y-12 gs_reveal gs_reveal_fromLeft">
                         <div>
-                            <h2 class="text-sm font-bold text-secondary uppercase tracking-widest mb-2">Get in touch</h2>
-                            <h3 class="text-3xl md:text-5xl font-bold text-white mb-6">Let's Work <span class="text-gradient">Together</span></h3>
-                            <p class="text-gray-400 leading-relaxed text-lg">Have a project in mind or looking to hire? Feel free to reach out. I'm currently available for freelance opportunities and full-time roles.</p>
+                            <span class="text-secondary font-mono text-xs mb-4 block tracking-widest uppercase">04 / CONNECTION</span>
+                            <h3 class="text-5xl md:text-7xl font-black text-white mb-6 leading-none tracking-tighter">Let's Work <br><span class="text-gradient">Together</span></h3>
+                            <p class="text-gray-400 leading-relaxed text-lg max-w-md">Have a visionary project in mind or looking to scale your engineering team? I'm currently available for high-impact roles and elite freelance opportunities.</p>
                         </div>
                         
                         <div class="space-y-6">
-                            <div class="flex items-center space-x-6 p-4 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
-                                <div class="w-14 h-14 rounded-full bg-primary/20 flex items-center justify-center text-primary text-xl">
+                            <div class="flex items-center space-x-6 p-6 rounded-[2rem] glass-card group cursor-pointer hover:border-primary/50 transition-all duration-500">
+                                <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/20 to-transparent border border-primary/20 flex items-center justify-center text-primary text-2xl group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 shadow-[0_0_20px_rgba(255,0,60,0.2)]">
                                     <i class="fas fa-phone-alt"></i>
                                 </div>
                                 <div>
-                                    <p class="text-sm text-gray-500 uppercase tracking-wider mb-1">Call Me At</p>
-                                    <a href="tel:9691795917" class="text-xl font-medium text-white hover:text-primary transition-colors">9691795917</a>
+                                    <p class="text-[10px] font-mono text-gray-500 uppercase tracking-widest mb-1">Direct Line</p>
+                                    <a href="tel:9691795917" class="text-2xl font-black text-white group-hover:text-primary transition-colors tracking-tight">9691795917</a>
                                 </div>
                             </div>
                             
-                            <div class="flex items-center space-x-6 p-4 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
-                                <div class="w-14 h-14 rounded-full bg-secondary/20 flex items-center justify-center text-secondary text-xl">
+                            <div class="flex items-center space-x-6 p-6 rounded-[2rem] glass-card group cursor-pointer hover:border-secondary/50 transition-all duration-500">
+                                <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-secondary/20 to-transparent border border-secondary/20 flex items-center justify-center text-secondary text-2xl group-hover:scale-110 group-hover:-rotate-12 transition-all duration-500 shadow-[0_0_20px_rgba(138,0,33,0.2)]">
                                     <i class="fas fa-envelope"></i>
                                 </div>
                                 <div>
-                                    <p class="text-sm text-gray-500 uppercase tracking-wider mb-1">Email Me At</p>
-                                    <a href="mailto:Lokenpraja6688@gmail.com" class="text-xl font-medium text-white hover:text-secondary transition-colors">Lokenpraja6688@gmail.com</a>
+                                    <p class="text-[10px] font-mono text-gray-500 uppercase tracking-widest mb-1">Digital Mail</p>
+                                    <a href="mailto:Lokenpraja6688@gmail.com" class="text-2xl font-black text-white group-hover:text-secondary transition-colors tracking-tight">Lokenpraja6688@gmail.com</a>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="pt-4 border-t border-white/10">
-                            <p class="text-sm text-gray-500 uppercase tracking-wider mb-4">Connect on Social</p>
+                        <div class="pt-8 border-t border-white/5">
+                            <p class="text-[10px] font-mono text-gray-500 uppercase tracking-widest mb-6 block">Global Network</p>
                             <div class="flex space-x-4">
-                                <a href="https://www.instagram.com/radhakrishn_xyz?igsh=M2xsMnVqYWZqeHkz" target="_blank" class="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-white hover:bg-[#E1306C] hover:border-[#E1306C] transition-all duration-300 transform hover:-translate-y-1">
-                                    <i class="fab fa-instagram text-xl"></i>
+                                <a href="https://www.instagram.com/lokendra.codx?igsh=MWVqd2Z0ZDVka3J6NA==" target="_blank" class="w-14 h-14 rounded-2xl glass-card flex items-center justify-center text-gray-400 hover:text-white hover:border-[#E1306C]/50 hover:bg-[#E1306C]/10 hover:shadow-[0_0_20px_rgba(225,48,108,0.3)] transition-all duration-500 transform hover:-translate-y-2">
+                                    <i class="fab fa-instagram text-2xl"></i>
                                 </a>
-                                <a href="https://www.facebook.com/share/14aBp1ytiDi/" target="_blank" class="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-white hover:bg-[#1877F2] hover:border-[#1877F2] transition-all duration-300 transform hover:-translate-y-1">
-                                    <i class="fab fa-facebook-f text-xl"></i>
+                                <a href="https://www.facebook.com/share/14aBp1ytiDi/" target="_blank" class="w-14 h-14 rounded-2xl glass-card flex items-center justify-center text-gray-400 hover:text-white hover:border-[#1877F2]/50 hover:bg-[#1877F2]/10 hover:shadow-[0_0_20px_rgba(24,119,242,0.3)] transition-all duration-500 transform hover:-translate-y-2">
+                                    <i class="fab fa-facebook-f text-2xl"></i>
                                 </a>
-                                <a href="https://www.linkedin.com/in/lokendra-prajapati-675406380/" target="_blank" class="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-white hover:bg-[#0077b5] hover:border-[#0077b5] transition-all duration-300 transform hover:-translate-y-1">
-                                    <i class="fab fa-linkedin-in text-xl"></i>
+                                <a href="https://www.linkedin.com/in/lokendra-prajapati-675406380/" target="_blank" class="w-14 h-14 rounded-2xl glass-card flex items-center justify-center text-gray-400 hover:text-white hover:border-[#0077b5]/50 hover:bg-[#0077b5]/10 hover:shadow-[0_0_20px_rgba(0,119,181,0.3)] transition-all duration-500 transform hover:-translate-y-2">
+                                    <i class="fab fa-linkedin-in text-2xl"></i>
                                 </a>
-                                <a href="https://github.com/lokendraPRAJA" target="_blank" class="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-white hover:bg-[#333] hover:border-[#333] transition-all duration-300 transform hover:-translate-y-1">
-                                    <i class="fab fa-github text-xl"></i>
+                                <a href="https://github.com/lokendraPRAJA" target="_blank" class="w-14 h-14 rounded-2xl glass-card flex items-center justify-center text-gray-400 hover:text-white hover:border-white/50 hover:bg-white/10 hover:shadow-[0_0_20px_rgba(255,255,255,0.2)] transition-all duration-500 transform hover:-translate-y-2">
+                                    <i class="fab fa-github text-2xl"></i>
                                 </a>
-                                <a href="https://api.whatsapp.com/send?phone=919691795917&text=Hi%20Lokendra,%20I'd%20like%20to%20discuss%20a%20project!" target="_blank" class="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-white hover:bg-[#25D366] hover:border-[#25D366] transition-all duration-300 transform hover:-translate-y-1">
-                                    <i class="fab fa-whatsapp text-xl"></i>
+                                <a href="https://api.whatsapp.com/send?phone=919691795917&text=Hi%20Lokendra,%20I'd%20like%20to%20discuss%20a%20project!" target="_blank" class="w-14 h-14 rounded-2xl glass-card flex items-center justify-center text-gray-400 hover:text-white hover:border-[#25D366]/50 hover:bg-[#25D366]/10 hover:shadow-[0_0_20px_rgba(37,211,102,0.3)] transition-all duration-500 transform hover:-translate-y-2">
+                                    <i class="fab fa-whatsapp text-2xl"></i>
                                 </a>
                             </div>
                         </div>
                     </div>
                     
                     <!-- Contact Form -->
-                    <div class="bg-surface border border-white/10 rounded-2xl p-8 md:p-12 shadow-2xl relative overflow-hidden gs_reveal gs_reveal_fromRight">
-                    <!-- Glow effect behind form -->
-                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-md max-h-md bg-primary/10 blur-[100px] rounded-full pointer-events-none"></div>
-                    
-                    <form class="relative z-10 space-y-6">
-                        <div class="grid md:grid-cols-2 gap-6">
-                            <div class="space-y-2">
-                                <label for="name" class="text-sm font-medium text-gray-300">Your Name</label>
-                                <input type="text" id="name" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors" placeholder="John Doe">
+                    <div class="glass-card rounded-[3rem] p-8 md:p-14 relative overflow-hidden gs_reveal gs_reveal_fromRight">
+                        <!-- Khatarnak Glows -->
+                        <div class="absolute -top-40 -right-40 w-80 h-80 bg-primary/20 blur-[100px] rounded-full pointer-events-none"></div>
+                        <div class="absolute -bottom-40 -left-40 w-80 h-80 bg-secondary/20 blur-[100px] rounded-full pointer-events-none"></div>
+                        
+                        <form class="relative z-10 space-y-6">
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div class="space-y-2">
+                                    <label for="name" class="text-[10px] font-mono text-gray-400 uppercase tracking-widest block">System Name</label>
+                                    <input type="text" id="name" class="w-full bg-transparent border border-white/10 px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-primary focus:bg-white/5 transition-all duration-300 font-medium text-lg rounded-sm" placeholder="">
+                                </div>
+                                <div class="space-y-2">
+                                    <label for="email" class="text-[10px] font-mono text-gray-400 uppercase tracking-widest block">Comm Link (Email)</label>
+                                    <input type="email" id="email" class="w-full bg-transparent border border-white/10 px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-primary focus:bg-white/5 transition-all duration-300 font-medium text-lg rounded-sm" placeholder="">
+                                </div>
                             </div>
                             <div class="space-y-2">
-                                <label for="email" class="text-sm font-medium text-gray-300">Your Email</label>
-                                <input type="email" id="email" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors" placeholder="john@example.com">
+                                <label for="subject" class="text-[10px] font-mono text-gray-400 uppercase tracking-widest block">Objective</label>
+                                <input type="text" id="subject" class="w-full bg-transparent border border-white/10 px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-secondary focus:bg-white/5 transition-all duration-300 font-medium text-lg rounded-sm" placeholder="">
                             </div>
-                        </div>
-                        <div class="space-y-2">
-                            <label for="subject" class="text-sm font-medium text-gray-300">Subject</label>
-                            <input type="text" id="subject" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors" placeholder="Project Inquiry">
-                        </div>
-                        <div class="space-y-2">
-                            <label for="message" class="text-sm font-medium text-gray-300">Message</label>
-                            <textarea id="message" rows="5" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors resize-none" placeholder="Tell me about your project..."></textarea>
-                        </div>
-                        <button type="submit" class="w-full py-4 rounded-lg bg-gradient-to-r from-primary to-secondary text-white font-bold text-lg hover:shadow-lg hover:shadow-primary/30 transition-all duration-300 transform hover:-translate-y-1">
-                            Send Message
-                        </button>
-                    </form>
-                </div>
+                            <div class="space-y-2">
+                                <label for="message" class="text-[10px] font-mono text-gray-400 uppercase tracking-widest block">Data Payload (Message)</label>
+                                <textarea id="message" rows="4" class="w-full bg-transparent border border-white/10 px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-secondary focus:bg-white/5 transition-all duration-300 font-medium text-lg resize-none rounded-sm" placeholder="Tell me about your vision..."></textarea>
+                            </div>
+                            <div class="pt-4">
+                                <button type="submit" class="w-full py-4 rounded-xl bg-white text-black font-black uppercase tracking-widest text-sm hover:bg-gradient-to-r hover:from-primary hover:to-secondary hover:text-white hover:shadow-[0_10px_30px_rgba(255,0,60,0.4)] hover:-translate-y-1 transition-all duration-500 overflow-hidden relative group">
+                                    <span class="relative z-10">Initialize Connection</span>
+                                    <div class="absolute inset-0 bg-gradient-to-r from-primary via-secondary to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
                 </div> <!-- End grid -->
             </div>
         </section>
@@ -412,13 +654,13 @@
             <div class="mb-4 md:mb-0">
                 <a href="#" class="text-2xl md:text-3xl font-black tracking-tighter flex items-center group">
                     <span class="text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]">LOKENDRA</span>
-                    <span class="text-gradient drop-shadow-[0_0_8px_rgba(56,189,248,0.5)] ml-[1px]">.CODX</span>
+                    <span class="text-gradient drop-shadow-[0_0_8px_rgba(255,51,51,0.5)] ml-[1px]">.CODX</span>
                 </a>
                 <p class="text-sm text-gray-500 mt-2">© 2026 Lokendra Prajapati. All rights reserved.</p>
             </div>
             
             <div class="flex space-x-6">
-                <a href="https://www.instagram.com/radhakrishn_xyz?igsh=M2xsMnVqYWZqeHkz" target="_blank" class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-white hover:bg-[#E1306C] hover:-translate-y-1 transition-all duration-300">
+                <a href="https://www.instagram.com/lokendra.codx?igsh=MWVqd2Z0ZDVka3J6NA==" target="_blank" class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-white hover:bg-[#E1306C] hover:-translate-y-1 transition-all duration-300">
                     <i class="fab fa-instagram"></i>
                 </a>
                 <a href="https://www.facebook.com/share/14aBp1ytiDi/" target="_blank" class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-white hover:bg-[#1877F2] hover:-translate-y-1 transition-all duration-300">
@@ -440,6 +682,7 @@
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Draggable.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
     <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
