@@ -58,15 +58,23 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 2. Navbar Scroll Effect
+    // 2. Navbar Scroll Effect (Optimized with requestAnimationFrame)
     const navbar = document.getElementById('navbar');
+    let ticking = false;
+
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
+        if (!ticking) {
+            window.requestAnimationFrame(() => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+                ticking = false;
+            });
+            ticking = true;
         }
-    });
+    }, { passive: true });
 
     // 3. Typed.js Initialization
     new Typed('#typed-text', {
@@ -84,30 +92,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 4. GSAP Animations
     
-    // Hero Section Animation
+    // Hero Section Animation (Sped up for fast loading)
     const heroTl = gsap.timeline();
     
     heroTl.from('.hero-content > *', {
-        y: 30,
-        opacity: 0,
-        duration: 0.8,
-        stagger: 0.15,
-        ease: 'power3.out',
-        delay: 0.2
-    })
-    .from('.hero-image', {
-        scale: 0.8,
-        opacity: 0,
-        duration: 1,
-        ease: 'power3.out'
-    }, '-=0.5')
-    .from('.floating-badge', {
         y: 20,
         opacity: 0,
-        duration: 0.6,
+        duration: 0.4,
         stagger: 0.1,
-        ease: 'back.out(1.7)'
-    }, '-=0.5');
+        ease: 'power3.out',
+        delay: 0
+    })
+    .from('.hero-image', {
+        scale: 0.9,
+        opacity: 0,
+        duration: 0.5,
+        ease: 'power3.out'
+    }, '-=0.3')
+    .from('.floating-badge', {
+        y: 15,
+        opacity: 0,
+        duration: 0.4,
+        stagger: 0.1,
+        ease: 'back.out(1.5)'
+    }, '-=0.3');
 
     // Scroll Reveal Animations
     function animateFrom(elem, direction) {
@@ -130,11 +138,11 @@ document.addEventListener('DOMContentLoaded', () => {
             y: y, 
             autoAlpha: 0
         }, {
-            duration: 1.25, 
+            duration: 0.5, 
             x: 0,
             y: 0, 
             autoAlpha: 1, 
-            ease: "expo", 
+            ease: "power2.out", 
             overwrite: "auto"
         });
     }
@@ -157,12 +165,17 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 5. Magnetic Button Effect
+    // 5. Magnetic Button Effect (Optimized rect caching)
     const magneticButtons = document.querySelectorAll('a.bg-gradient-to-r, button[type="submit"]');
     
     magneticButtons.forEach(btn => {
+        let rect;
+        btn.addEventListener('mouseenter', () => {
+            rect = btn.getBoundingClientRect();
+        });
+        
         btn.addEventListener('mousemove', (e) => {
-            const rect = btn.getBoundingClientRect();
+            if (!rect) rect = btn.getBoundingClientRect();
             const x = e.clientX - rect.left - rect.width / 2;
             const y = e.clientY - rect.top - rect.height / 2;
             
@@ -175,6 +188,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         
         btn.addEventListener('mouseleave', () => {
+            rect = null;
             gsap.to(btn, {
                 x: 0,
                 y: 0,
@@ -225,8 +239,8 @@ document.addEventListener('DOMContentLoaded', () => {
         gsap.fromTo(petal, { opacity: 0 }, { opacity: 0.8, duration: 1, delay: delay });
     }
 
-    // Initial petals
-    for (let i = 0; i < 45; i++) {
+    // Initial petals (Reduced from 45 to 15 for better performance)
+    for (let i = 0; i < 15; i++) {
         setTimeout(createPetal, Math.random() * 8000);
     }
 
